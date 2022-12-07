@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 
 // create component
-class Form extends React.component {
+class Form extends React.Component {
     constructor(props) {
         super(props);
         
@@ -46,6 +46,7 @@ class Form extends React.component {
                 alert("Opps, we're gonna have to take this offline, something's fishy here. This might be totally our fault, or you're secret identity isn't as bulletproof as you thought. Either way, sit tight!")
             }
         })
+        event.preventDefault();
     }
 
     // form rendered
@@ -54,7 +55,7 @@ class Form extends React.component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
-                    <label>First Name:</label>
+                    <label>First Name: </label>
                     <input
                         type='text'
                         value={name_first}
@@ -64,7 +65,7 @@ class Form extends React.component {
                 </div>
                 <br />
                 <div>
-                    <label>Last Name:</label>
+                    <label>Last Name: </label>
                     <input
                         type='text'
                         value={name_last}
@@ -74,7 +75,7 @@ class Form extends React.component {
                 </div>
                 <br />
                 <div>
-                    <label>Address Line 1:</label>
+                    <label>Address Line 1: </label>
                     <input
                         type='text'
                         value={address_line_1}
@@ -84,7 +85,7 @@ class Form extends React.component {
                 </div>
                 <br />
                 <div>
-                    <label>Address Line 2:</label>
+                    <label>Address Line 2: </label>
                     <input
                         type='text'
                         value={address_line_2}
@@ -94,7 +95,7 @@ class Form extends React.component {
                 </div>
                 <br />
                 <div>
-                    <label>City:</label>
+                    <label>City: </label>
                     <input
                         type='text'
                         value={address_city}
@@ -102,8 +103,9 @@ class Form extends React.component {
                         name="address_city"
                     />
                 </div>
+                <br />
                 <div>
-                    <label>State Code:</label>
+                    <label>State Code: </label>
                     <input
                         type='text'
                         value={address_state}
@@ -113,7 +115,7 @@ class Form extends React.component {
                 </div>
                 <br />
                 <div>
-                    <label>Zip Code:</label>
+                    <label>Zip Code: </label>
                     <input
                         type='text'
                         value={address_postal_code}
@@ -123,7 +125,7 @@ class Form extends React.component {
                 </div>
                 <br />
                 <div>
-                    <label>Country Code:</label>
+                    <label>Country Code: </label>
                     <input
                         type='text'
                         value={address_country_code}
@@ -133,7 +135,7 @@ class Form extends React.component {
                 </div>
                 <br />
                 <div>
-                    <label>SSN:</label>
+                    <label>SSN: </label>
                     <input
                         type='text'
                         value={document_ssn}
@@ -143,7 +145,7 @@ class Form extends React.component {
                 </div>
                 <br />
                 <div>
-                    <label>Email Address:</label>
+                    <label>Email Address: </label>
                     <input
                         type='text'
                         value={email_address}
@@ -164,7 +166,7 @@ class Form extends React.component {
                 <br />
                 <div>
                     <label>
-                        Submit:
+                        Submit: 
                         <input type="submit"/>
                     </label>
                 </div>

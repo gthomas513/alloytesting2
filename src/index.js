@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Form from './components/form.js';
+import ReactDOM from 'react-dom';
+import Form from './App';
 
-class App extends React.component {
+class App extends React.Component {
   render () {
     return (<div>
       <h1>Form Submission</h1>
@@ -11,4 +11,4 @@ class App extends React.component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('root'));
