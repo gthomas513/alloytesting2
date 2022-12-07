@@ -35,8 +35,8 @@ class Form extends React.Component {
 
     // handle submit events + API call
     handleSubmit = (events) => {
-        const alloy_username = "Cqp2b7feDFCsJycGqjX0UI1B7aMg9c3U"
-        const alloy_password = "F3y5uu0jNaSjvKCjcFR0Vo1GoCisB3nu"
+        const alloy_username = ""
+        const alloy_password = ""
 
         let data = `${alloy_username}:${alloy_password}`;
         let encodedString = btoa(data)
