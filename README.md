@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Technical Task for SA interview @ Alloy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was an assignment for an interview with [Alloy](https://www.alloy.com//). It's a Form application that utilizies Alloy's onboarding API to allow a customer to apply and post the data to Allow's API. It is built with the following technologies:
 
-## Available Scripts
+- [React.js]
+- [Javascript]
+- [HTML]
 
-In the project directory, you can run:
+## To Launch This Project Locally, Follow These Steps:
 
-### `npm start`
+Clone and install:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+git clone https://github.com/gthomas513/alloytesting2
+cd alloytesting2
+npm i
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Start your development server:
 
-### `npm test`
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app should open in a browser automatically. If it doesn't, visit [http://localhost:3000](http://localhost.com:3000).
 
-### `npm run build`
+## Event Data Troubleshooting:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you are not generating any results, or see an error, it's most likely caused by a CORS issue. There is code included in this project to proxy around that will get around the CORS issue by deploying a temporary server. The server remains active for 24 hours only unfortunately, and access will need to be requested at the end of every 24 hours.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Open the project in your text editor
+- Open `src/App.js`
+- On line #43, you'll see this line of code: `let proxyLink = 'https://cors-anywhere.herokuapp.com/'
+- Head to the link and press the button on the right hand side to gain temporary access to the dev server
+- Stop your local server and restart it again: `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you run into any other issues, you can email me directly at [gabe.thomas513@gmail.com](mailto:gabe.thomas513@gmail.com).
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
