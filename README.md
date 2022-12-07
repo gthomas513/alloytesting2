@@ -28,11 +28,12 @@ The app should open in a browser automatically. If it doesn't, visit [http://loc
 
 If you are not generating any results, or see an error, it's most likely caused by a CORS issue. There is code included in this project to proxy around that will get around the CORS issue by deploying a temporary server. The server remains active for 24 hours only unfortunately, and access will need to be requested at the end of every 24 hours.
 
-- Open the project in your text editor
-- Open `src/App.js`
-- On line #43, you'll see this line of code: `let proxyLink = 'https://cors-anywhere.herokuapp.com/'
-- Head to the link and press the button on the right hand side to gain temporary access to the dev server
-- Stop your local server and restart it again: `npm start`
+- Open the project in your text editor.
+- Open `src/App.js`.
+- On line #43, you'll see this line of code: `let proxyLink = 'https://cors-anywhere.herokuapp.com/'.
+- This is the URL for the proxy server. However, you'll need to head to 'https://cors-anywhere.herokuapp.com/corsdemo/' instead.
+- Head to the above link on line #34 and press the button on the right hand side to gain temporary access to the dev server.
+- Stop your local server and restart it again: `npm start`.
 
 If you run into any other issues, you can email me directly at [gabe.thomas513@gmail.com](mailto:gabe.thomas513@gmail.com).
 
