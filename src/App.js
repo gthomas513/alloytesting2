@@ -18,7 +18,7 @@ class Form extends React.Component {
             address_country_code: '', // country code format, e.g. "US"
             document_ssn: '',
             email_address: '',
-            birth_date: '', // must be in ISO 8601 format YYYY-MM-DD
+            birth_date: '' // must be in ISO 8601 format YYYY-MM-DD
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -48,6 +48,23 @@ class Form extends React.Component {
         })
         event.preventDefault();
     }
+
+
+    // // call alloy API
+    // componentDidMount() {
+    //     const alloy_username = "Cqp2b7feDFCsJycGqjX0UI1B7aMg9c3U"
+    //     const alloy_password = "F3y5uu0jNaSjvKCjcFR0Vo1GoCisB3nu"
+
+    //     let data = `${alloy_username}:${alloy_password}`;
+    //     let buff = new Buffer(data);
+    //     let base64data = buff.toString('base64');
+
+    //     axios.post('/onboarding', {
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Authorization': 'Basic ${base64data'
+    //         }
+    //     }
 
     // form rendered
     render() {
@@ -172,7 +189,7 @@ class Form extends React.Component {
                     </label>
                 </div>
             </form>
-        );
+        )
     }
 }
 
