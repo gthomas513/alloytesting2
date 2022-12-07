@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 
 // create component
@@ -27,44 +26,40 @@ class Form extends React.Component {
 
     // handle change events
     handleChange = event => {
-        const thisAttribute = event.target.thisAttribute;
+        const thisAttribute = event.target.value;
         this.setState({
             [event.target.name]: thisAttribute
         });
+        console.log(this.state.name_first)
     }
 
-    // handle submission events    
-    handleSubmit = event => {
-        axios.post('/onboarding', {
-            payload: this.state
-        }).then((res) => {
-            if(res.data.formSubmit === "Approved") {
-                alert("Woohoo! You're in, and we've confirmed you're not a spy! (or you beat our systems...). Either way, WELCOME!!")
-            } else if (res.data.formSubmit === "Denied") {
-                alert("Sorry pal, no dice. This just won't cut it, we can't let you join. Sayonara, Au Revoir, Auf Wiedersehen, you get the picture.")
-            } else if (res.data.formSubmit === "Manual Review") {
-                alert("Opps, we're gonna have to take this offline, something's fishy here. This might be totally our fault, or you're secret identity isn't as bulletproof as you thought. Either way, sit tight!")
+    // handle submit events + API call
+    handleSubmit = (events) => {
+        const alloy_username = "Cqp2b7feDFCsJycGqjX0UI1B7aMg9c3U"
+        const alloy_password = "F3y5uu0jNaSjvKCjcFR0Vo1GoCisB3nu"
+
+        let data = `${alloy_username}:${alloy_password}`;
+        let encodedString = btoa(data)
+        let proxyLink = 'https://cors-anywhere.herokuapp.com/'
+        let URL = 'https://sandbox.alloy.co/v1/evaluations/'
+        let proxyURL = proxyLink + URL
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+              accept: 'application/json',
+              authorization: `Basic ${encodedString}`
             }
-        })
-        event.preventDefault();
+          };
+          
+          fetch(proxyURL, options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+            events.preventDefault();
     }
 
-
-    // // call alloy API
-    // componentDidMount() {
-    //     const alloy_username = "Cqp2b7feDFCsJycGqjX0UI1B7aMg9c3U"
-    //     const alloy_password = "F3y5uu0jNaSjvKCjcFR0Vo1GoCisB3nu"
-
-    //     let data = `${alloy_username}:${alloy_password}`;
-    //     let buff = new Buffer(data);
-    //     let base64data = buff.toString('base64');
-
-    //     axios.post('/onboarding', {
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Authorization': 'Basic ${base64data'
-    //         }
-    //     }
 
     // form rendered
     render() {
@@ -158,7 +153,7 @@ class Form extends React.Component {
                         value={document_ssn}
                         onChange={this.handleChange}
                         name="document_ssn"
-                        pattern="^(?!666|000|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0{4})\\d{4}$"
+                        // pattern="^(?!666|000|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0{4})\\d{4}$"
                     />
                 </div>
                 <br />
