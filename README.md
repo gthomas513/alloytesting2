@@ -26,7 +26,7 @@ The app should open in a browser automatically. If it doesn't, visit [http://loc
 
 ## Event Data Troubleshooting:
 
-If you are not generating any results, or see an error, it's most likely caused by a CORS issue. There is code included in this project to proxy around that will get around the CORS issue by deploying a temporary server. The server remains active for 24 hours only unfortunately, and access will need to be requested at the end of every 24 hours.
+If you are not generating any results, or see an error, it's most likely caused by a CORS issue. There is code included in this project to proxy around that will get around the CORS issue by deploying a temporary server. The server remains active for 24 hours only unfortunately, and access will need to be requested at the end of every 24 hours. A 401 error may also surface if too many requests have been made to the server within 1 hour period. The rate limit is approximitely 200 requests per hour.
 
 - Open the project in your text editor.
 - Open `src/App.js`.
