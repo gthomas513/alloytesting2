@@ -63,11 +63,11 @@ class Form extends React.Component {
                     const { outcome } = summary;
                     console.log(data);
                     if (outcome === "Manual Review") {
-                        alert("Thanks for submitting your application, we'll be in touch shortly")
+                        alert("Oh boy, something happened here. Sit tight, we just need to doublecheck a few things, but it shouldn't take long!")
                     } else if (outcome === "Denied") {
-                        alert("Sorry, your application was not successful")
+                        alert("We're so sorry, but your application wasn't approved. You may contact our support team for more information on why you were not approved.")
                     } else {
-                        alert("Congratulations, you have been approved!")
+                        alert("Success! Welcome to Alloy! You'll be receiving an email shortly with next steps.")
                     }
                 });
                 events.preventDefault();
@@ -174,7 +174,7 @@ class Form extends React.Component {
                         value={document_ssn}
                         onChange={this.handleChange}
                         name="document_ssn"
-                        // pattern="^(?!666|000|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0{4})\\d{4}$"
+                        pattern="^(?!(000|666|9))\d{3}(?!00)\d{2}(?!0000)\d{4}$"
                     />
                 </div>
                 <br />
