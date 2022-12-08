@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 // create component
 class Form extends React.Component {
@@ -35,10 +36,10 @@ class Form extends React.Component {
 
     // handle submit events + API call
     handleSubmit = (events) => {
-        const alloy_username = ""
-        const alloy_password = ""
+        const alloy_Token = ""
+        const alloy_Secret = ""
 
-        let data = `${alloy_username}:${alloy_password}`;
+        let data = `${alloy_Token}:${alloy_Secret}`;
         let encodedString = btoa(data)
         let proxyLink = 'https://cors-anywhere.herokuapp.com/'
         let URL = 'https://sandbox.alloy.co/v1/evaluations/'
@@ -56,7 +57,7 @@ class Form extends React.Component {
           fetch(proxyURL, options)
             .then(response => response.json())
             .then(response => console.log(response))
-            .catch(err => console.error(err));
+            .catch(err => console.error(err))
             events.preventDefault();
     }
 
@@ -70,6 +71,7 @@ class Form extends React.Component {
                     <label>First Name: </label>
                     <input
                         type='text'
+                        placeholder='John'
                         value={name_first}
                         onChange={this.handleChange}
                         name="name_first"
@@ -80,6 +82,7 @@ class Form extends React.Component {
                     <label>Last Name: </label>
                     <input
                         type='text'
+                        placeholder='Smith'
                         value={name_last}
                         onChange={this.handleChange}
                         name="name_last"
@@ -90,6 +93,7 @@ class Form extends React.Component {
                     <label>Address Line 1: </label>
                     <input
                         type='text'
+                        placeholder='123 Sunny Street'
                         value={address_line_1}
                         onChange={this.handleChange}
                         name="address_line_1"
@@ -100,6 +104,7 @@ class Form extends React.Component {
                     <label>Address Line 2: </label>
                     <input
                         type='text'
+                        placeholder='Apt 1A'
                         value={address_line_2}
                         onChange={this.handleChange}
                         name="address_line_2"
@@ -110,6 +115,7 @@ class Form extends React.Component {
                     <label>City: </label>
                     <input
                         type='text'
+                        placeholder='Brooklyn'
                         value={address_city}
                         onChange={this.handleChange}
                         name="address_city"
@@ -120,6 +126,7 @@ class Form extends React.Component {
                     <label>State Code: </label>
                     <input
                         type='text'
+                        placeholder='NY'
                         value={address_state}
                         onChange={this.handleChange}
                         name="address_state"
@@ -130,6 +137,7 @@ class Form extends React.Component {
                     <label>Zip Code: </label>
                     <input
                         type='text'
+                        placeholder='11217'
                         value={address_postal_code}
                         onChange={this.handleChange}
                         name="address_postal_code"
@@ -140,6 +148,7 @@ class Form extends React.Component {
                     <label>Country Code: </label>
                     <input
                         type='text'
+                        placeholder='US'
                         value={address_country_code}
                         onChange={this.handleChange}
                         name="address_country_code"
@@ -150,6 +159,7 @@ class Form extends React.Component {
                     <label>SSN: </label>
                     <input
                         type='text'
+                        placeholder='123456789'
                         value={document_ssn}
                         onChange={this.handleChange}
                         name="document_ssn"
@@ -161,6 +171,7 @@ class Form extends React.Component {
                     <label>Email Address: </label>
                     <input
                         type='text'
+                        placeholder='john.smith@email.com'
                         value={email_address}
                         onChange={this.handleChange}
                         name="email_address"
@@ -171,6 +182,7 @@ class Form extends React.Component {
                     <label>Birthday: </label>
                     <input
                         type='text'
+                        placeholder='YYYY-MM-DD'
                         value={birth_date}
                         onChange={this.handleChange}
                         name="birth_date"
