@@ -36,14 +36,16 @@ class Form extends React.Component {
 
     // handle submit events + API call
     handleSubmit = (events) => {
+        
         const alloy_Token = ""
         const alloy_Secret = ""
 
-        let data = `${alloy_Token}:${alloy_Secret}`;
-        let encodedString = btoa(data)
+        let basicAuth = `${alloy_Token}:${alloy_Secret}`;
+        let encodedString = btoa(basicAuth)
         let proxyLink = 'https://cors-anywhere.herokuapp.com/'
         let URL = 'https://sandbox.alloy.co/v1/evaluations/'
         let proxyURL = proxyLink + URL
+
 
         const options = {
             method: 'POST',
@@ -54,13 +56,22 @@ class Form extends React.Component {
             }
           };
           
-          fetch(proxyURL, options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err))
-            events.preventDefault();
+            fetch(proxyURL, options)
+                .then((response) => response.json())
+                .then((data) => {
+                    const { summary } = data;
+                    const { outcome } = summary;
+                    console.log(data);
+                    if (outcome === "Manual Review") {
+                        alert("Thanks for submitting your application, we'll be in touch shortly")
+                    } else if (outcome === "Denied") {
+                        alert("Sorry, your application was not successful")
+                    } else {
+                        alert("Congratulations, you have been approved!")
+                    }
+                });
+                events.preventDefault();
     }
-
 
     // form rendered
     render() {
