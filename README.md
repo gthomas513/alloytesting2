@@ -1,9 +1,10 @@
 # Technical Task for SA interview @ Alloy
 
-This project was an assignment for an interview with [Alloy](https://www.alloy.com/). It's a Form application that utilizies Alloy's onboarding API to allow a customer to apply and post the data to Allow's API. It is built with the following technologies:
+This project was an assignment for an interview with [Alloy](https://www.alloy.com/). It's a Form application that utilizies Alloy's onboarding API to allow a customer to apply and post the data to Alloy's API. It is built with the following technologies:
 
 - [React.js]
 - [Javascript]
+- [CSS]
 - [HTML]
 
 ## To Launch This Project Locally, Follow These Steps:
