@@ -37,8 +37,3 @@ If you are not generating any results, or see an error, it's most likely caused 
 - Stop your local server and restart it again: `npm start`.
 
 If you run into any other issues, you can email me directly at [gabe.thomas513@gmail.com](mailto:gabe.thomas513@gmail.com).
-
-
-```
-
-```
