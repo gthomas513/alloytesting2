@@ -41,7 +41,7 @@ class Form extends React.Component {
         const alloy_Secret = ""
 
         let basicAuth = `${alloy_Token}:${alloy_Secret}`;
-        let encodedString = btoa(basicAuth)
+        let encodedString = window.btoa(basicAuth) // btoa is depreciated but still functions. window.atob() could be used as an alternative
         let proxyLink = 'https://cors-anywhere.herokuapp.com/'
         let URL = 'https://sandbox.alloy.co/v1/evaluations/'
         let proxyURL = proxyLink + URL
